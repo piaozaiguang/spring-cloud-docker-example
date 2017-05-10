@@ -25,6 +25,7 @@
 
 	<modules>
 		<module>discovery-eureka</module>
+        <module>hello-service</module>
 	</modules>
 
 	<dependencyManagement>
