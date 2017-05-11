@@ -24,6 +24,7 @@
         <div class="panel-heading"><h5>Cloud info</h5></div>
         <div class="panel-body">
           <a class="btn btn-default btn-sm" id="feignBtn" href="#">FeignClient Test</a>
+          <a class="btn btn-default btn-sm" id="zuulBtn" href="#">Zuul Test</a>
         </div>
       </div>
     </div>
@@ -38,6 +39,16 @@
       url: '/services',
       type: 'get',
       contentType: "application/json; charset=utf-8",
+      success: function (message) {
+        console.log(message);
+      }
+    });
+  });
+  $('#zuulBtn').click(function (e) {
+    $.ajax({
+      url: 'http://localhost:8050/hello/profile',
+      type: 'get',
+      crossDomain: true,
       success: function (message) {
         console.log(message);
       }

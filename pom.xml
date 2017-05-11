@@ -28,6 +28,7 @@
         <module>hello-service</module>
 		<module>config-server-eureka</module>
 		<module>client-ui</module>
+		<module>gateway-zuul</module>
 	</modules>
 
 	<dependencyManagement>
