@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -22,12 +23,14 @@ public class HelloController {
     @Autowired
     private DiscoveryClient discoveryClient;
 
-    @GetMapping("")
-    public List<String> showServices() {
+    @GetMapping("/services")
+    @ResponseBody
+    public List<String> services() {
         return discoveryClient.getServices();
     }
 
     @GetMapping("/profile")
+    @ResponseBody
     public String profile() {
         return this.profile;
     }

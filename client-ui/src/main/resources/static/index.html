@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="description" content="Spring-Cloud-Docker-Example">
+  <meta name="author" content="piaozaiguang">
+  <title>Lottery Admin</title>
+
+  <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" />
+  <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <style>
+    h5 {margin-top:0;margin-bottom:0}
+    .panel-heading {padding:10px}
+    .panel-body {padding:10px}
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-heading"><h5>Cloud info</h5></div>
+        <div class="panel-body">
+          <a class="btn btn-default btn-sm" id="feignBtn" href="#">FeignClient Test</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+(function($){
+  $('#feignBtn').click(function(e) {
+    $.ajax({
+      url: '/services',
+      type: 'get',
+      contentType: "application/json; charset=utf-8",
+      success: function (message) {
+        console.log(message);
+      }
+    });
+  });
+})(jQuery);
+</script>
+</body>
+</html>
