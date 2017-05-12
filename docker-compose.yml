@@ -7,8 +7,7 @@ config-server:
   image: config-server
   ports:
   - 8040:8040
-  links:
-  - discovery-eureka
+  hostname: localhost
 gateway-zuul:
   image: gateway-zuul
   ports:
