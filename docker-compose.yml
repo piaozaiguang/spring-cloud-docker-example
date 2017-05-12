@@ -1,0 +1,32 @@
+discovery-eureka:
+  image: discovery-eureka
+  ports:
+  - 8761:8761
+  hostname: localhost
+config-server:
+  image: config-server
+  ports:
+  - 8040:8040
+  links:
+  - discovery-eureka
+gateway-zuul:
+  image: gateway-zuul
+  ports:
+  - 8050:8050
+  links:
+  - discovery-eureka
+  - hello-service
+hello-service:
+  image: hello-service
+  ports:
+  - 8000:8000
+  links:
+  - discovery-eureka
+  - config-server
+client-ui:
+  image: client-ui
+  ports:
+  - 8080:8080
+  links:
+  - discovery-eureka
+  - config-server

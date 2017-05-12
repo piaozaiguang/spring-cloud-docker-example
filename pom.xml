@@ -26,7 +26,7 @@
 	<modules>
 		<module>discovery-eureka</module>
         <module>hello-service</module>
-		<module>config-server-eureka</module>
+		<module>config-server</module>
 		<module>client-ui</module>
 		<module>gateway-zuul</module>
 	</modules>
@@ -51,4 +51,5 @@
 			</plugin>
 		</plugins>
 	</build>
+
 </project>

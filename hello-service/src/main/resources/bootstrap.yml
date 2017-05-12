@@ -3,14 +3,12 @@ spring:
     name: hello-service
   cloud:
     config:
+      uri: http://localhost:8040/
       profile: dev
-      discovery:
-        enabled: true
-        serviceId: config-server-eureka
 
 eureka:
   client:
-    serviceUrl:
+    service-url:
       defaultZone: http://localhost:8761/eureka/
     instance:
-        preferIpAddress: true
+      preferIpAddress: true
